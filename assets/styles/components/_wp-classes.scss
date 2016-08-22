@@ -1,0 +1,7 @@
+
+
+// Text meant only for screen readers
+.screen-reader-text {
+  @extend .sr-only;
+  @extend .sr-only-focusable;
+}

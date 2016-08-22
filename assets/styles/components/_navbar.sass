@@ -1,0 +1,269 @@
+/* === NAVIGATION === */
+$nav-z-base: 400
+
+header.banner
+	z-index: $nav-z-base + 2
+	position: fixed
+	width: 100%
+	padding: .5rem
+	background: $black
+	.wrap
+		width: 100%
+		padding: 5px
+		display: flex
+		flex-direction: row
+		flex-wrap: nowrap
+		justify-content: space-between
+		align-items: center
+		color: $white
+	.wrap::after
+		content: none
+
+.nav-primary ul.nav
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	li
+		margin: 10px
+		a
+			color: $white
+			&:hover
+				color: $brand-primary
+				transition: color .25s
+
+a.brand
+	font-family: $trade-gothic
+	font-weight: bold
+	text-transform: uppercase
+	font-size: 1.2rem
+	margin-bottom: 0px
+	line-height: 1
+	color: $white
+.brand-tagline
+	font-family: $trade-gothic
+	font-size: .9rem
+	text-transform: lowercase
+	margin-bottom: 0px
+
+a.brand:hover
+	text-decoration: none
+	color: $brand-primary
+	transition: all .25s
+
+
+.social-icons a
+	background-color: transparent
+	color: $white
+	&:hover
+		color: $brand-primary
+		transition: all .25s
+		background-color: transparent
+
+// .title-area
+// 	width: auto !important
+// 	padding-top: 0px
+// 	.site-title a
+// 		text-transform: uppercase
+// 		text-decoration: none
+// 		color: $white
+// 		+font($avenir, 26px, regular)
+// 	.site-description
+// 		margin-top: -10px
+// 		a
+// 			+font($trade-gothic, 14px, light)
+// 			text-decoration: none
+// 			color: $white
+// 			opacity: .6
+//
+//
+//
+// nav.nav-primary
+// 	height: 75px
+// 	position: fixed
+// 	z-index: 3
+// 	background: transparent
+// 	// .nav-background
+// 	// 	width: 100%
+// 	// 	height: 100%
+// 	// 	background: #000000
+// 	// 	position: absolute
+// 	// 	top: 0
+// 	// 	left: 0
+//
+// 	.wrap
+// 		display: flex
+// 		justify-content: space-between
+// 		align-items: center
+// 		flex-direction: row
+// 		flex-wrap: nowrap
+// 		max-width: 100%
+// 		padding: 2px
+// 		+breakpoint($large)
+// 			+padding-sides(60px)
+// 			// justify-content: center
+// 		opacity: .99
+// 		// z-index: 4
+//
+// 		ul
+// 			display: flex
+// 			justify-content: space-between
+// 			+breakpoint($large)
+// 				justify-content: center
+// 			align-items: center
+// 			flex-direction: row
+// 			flex-wrap: wrap
+// 			color: $white
+// 			order: 1
+// 			+breakpoint($large)
+// 				order: 2
+// 				flex-grow: 2
+// 			width: auto
+// 			li a span, li a
+// 				text-decoration: none !important
+// 				color: $white
+//
+// 			li:not([class*="whomadethis-lightbox"])
+// 				display: none
+// 				+breakpoint($large)
+// 					display: inline-block
+//
+// 			li.whomadethis-lightbox a:before
+// 				content: '\f142'
+// 				font-family: "Ionicons"
+// 				font-size: 3rem
+// 				+breakpoint($large)
+// 					display: none
+// 			li.whomadethis-lightbox a span
+// 				display: none
+// 				+breakpoint($large)
+// 					display: inline-block
+// 		.title-area
+// 			order: 2
+// 			flex-grow: 2
+// 			+breakpoint($large)
+// 				order: 1
+// 				flex-grow: 0
+// 		.social-icons
+// 			width: auto
+// 			display: flex
+// 			flex-wrap: row
+// 			flex-wrap: nowrap
+// 			order: 3
+// 			a
+// 				display: inline-block
+// 				// background-color: $white
+// 				margin: 5px
+// 				text-align: center
+// 				border-radius: 2px
+// 				color: $white
+// 				i
+// 					color: $white
+// 				&:hover
+// 					color: $white
+// 					+transition(.3s)
+// 			a:not([class*="youtube"])
+// 				display: none
+// 				+breakpoint($large)
+// 					display: inline-block
+
+::-webkit-scrollbar
+	display: none
+	+breakpoint($large)
+		display: auto
+
+nav.nav-secondary
+	box-shadow: $shadow
+	z-index: 4
+	position: relative
+
+	.nav-filter-overlay
+		position: absolute
+		pointer-events: none
+		right: 0
+		bottom: 0
+		width: 50%
+		height: 80px
+		background: linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 0%, rgba(255,255,255,0.71) 71%, rgba(255,255,255,1) 100%)
+		+breakpoint($large)
+			display: none
+		// background: $red
+	.wrap
+		width: auto
+		overflow: auto
+		width: 100%
+		max-width: 100%
+		+padding-sides(5%)
+
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		+breakpoint($med)
+			flex-direction: row
+			flex-wrap: nowrap
+			justify-content: space-between
+			align-items: center
+
+		ul
+			width: 100%
+			list-style-type: none
+			overflow-x: scroll
+			white-space: nowrap
+			+breakpoint($med)
+				width: auto
+			flex-grow: 1
+			order: 2
+			li
+				display: inline-block
+				width: auto
+			li a
+				display: inline-block
+				width: auto
+				text-transform: lowercase
+				text-decoration: none
+				margin: 26px 4px
+				padding: 10px 20px
+				border-radius: 2px
+				&:hover
+					color: $yellow
+			li a.selected
+				background-color: $yellow
+				color: $white
+
+		.search-bar-wrap
+			display: inline-block
+			width: 100%
+			order: 1
+			margin-top: 20px
+			white-space: nowrap
+			+transition(.2s)
+			+breakpoint($med)
+				margin-top: 2px
+				width: 30%
+				order: 3
+			.quicksearch
+				display: inline-block
+				margin: 2px
+				height: 40px
+				padding: 2px 10px
+				border-radius: 2px
+				border: transparent
+				background: rgba(0,0,0,.22)
+				font-family: Avenir
+				font-size: 16px
+				color: #4a4a4a
+
+		.search-bar-wrap.small
+			height: 0px
+			margin-top: 0px
+			+transition(.2s)
+		#clear-search
+			display: inline-block
+			position: relative
+			padding-top: 6px
+			right: 30px
+			color: rgba(0,0,0,.4)
+
+#sticky-wrapper.is-sticky
+	.nav-secondary
+		margin-top: 75px
+		margin-bottom: 100px

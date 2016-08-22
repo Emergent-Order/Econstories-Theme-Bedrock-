@@ -1,0 +1,42 @@
+@import "common/variables";
+
+
+// Automatically injected Bower dependencies via wiredep (never manually edit this block)
+// bower:scss
+@import "../../bower_components/bootstrap/scss/bootstrap.scss";
+@import "../../bower_components/sassy-maps/sass/_sassy-maps.scss";
+@import "../../bower_components/breakpoint-sass/stylesheets/_breakpoint.scss";
+@import "../../bower_components/slick-carousel/slick/slick.scss";
+@import "../../bower_components/animatewithsass/animate.scss";
+// endbower
+
+// bower:css
+@import "../../bower_components/slick-carousel/slick/slick.css";
+@import "../../bower_components/featherlight/release/featherlight.min.css";
+@import "../../bower_components/Ionicons/css/ionicons.css";
+@import "../../bower_components/filament-sticky/fixedsticky.css";
+@import "../../bower_components/remodal/dist/remodal.css";
+@import "../../bower_components/remodal/dist/remodal-default-theme.css";
+@import "../../bower_components/social-share-kit/dist/css/social-share-kit.css";
+// endbower
+
+
+@import "common/typography";
+
+/* === COMPONENTS === */
+@import "components/buttons";
+@import "components/comments";
+@import "components/forms";
+@import "components/grid";
+@import "components/wp-classes";
+@import "components/navbar";
+
+/* === LAYOUTS === */
+@import "layouts/header";
+@import "layouts/sidebar";
+@import "layouts/footer";
+@import "layouts/pages";
+@import "layouts/posts";
+@import "layouts/tinymce";
+
+/* === PAGE-SPECIFIC === */

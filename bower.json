@@ -1,0 +1,43 @@
+{
+  "name": "econstories",
+  "authors": [
+    "elliebartling <ellen@emergentorder.com>"
+  ],
+  "directory": "assets/vendor/",
+  "description": "A new look and feel for EconStories.tv",
+  "main": "",
+  "license": "MIT",
+  "homepage": "www.econstories.tv",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "bootstrap": "v4.0.0-alpha.3",
+    "breakpoint-sass": "at-import/breakpoint#^2.7.0",
+    "isotope": "metafizzy/isotope#^3.0.0",
+    "slick-carousel": "^1.6.0",
+    "featherlight": "noelboss/featherlight#^1.4.1",
+    "modernizr": "^3.3.1",
+    "Ionicons": "ionicons#~2.0.1",
+    "filament-sticky": "fixed-sticky#^0.1.7",
+    "animatewithsass": "^3.2.2",
+    "remodal": "^1.0.7",
+    "background-blur": "^0.1.3",
+    "social-share-kit": "darklow/social-share-kit#^1.0.9"
+  },
+  "overrides": {
+    "isotope": {
+      "main": [
+        "dist/isotope.pkgd.min.js"
+      ],
+      "dependencies": {}
+    }
+  }
+}

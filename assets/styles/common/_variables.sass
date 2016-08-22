@@ -1,0 +1,93 @@
+// Glyphicons font path
+$icon-font-path:        "../fonts/"
+
+// Grid settings
+$main-sm-columns:       12
+$sidebar-sm-columns:    4
+
+// Colors
+$brand-primary:         #27ae60
+
+// --------------------------
+// MIXINS
+// --------------------------
+
+$small: 320px
+$med: 640px
+$large: 900px
+$wide: 1400px
+
+$media-range-medium: 640px 1400px
+
+$border-radius: 4px
+$shadow: 0px 0px 11px rgba(0,0,0,.1)
+$shadow-distant: 0px 0px 30px rgba(0,0,0,.2)
+
+
+$green: #B0D335
+$white: #FFFFFF
+$yellow: #E6BC68
+$dark-gray: #4a4a4a
+$black: #1C1C1C
+$light-gray: #D8D8D8
+$red: #CA6C5A
+$love-gov-pink: #E66894
+
+$transp-black-7:    rgba(0,0,0,0.7)
+$transp-black-5:    rgba(0,0,0,0.5)
+$transp-black-2:    rgba(0,0,0,0.2)
+$transp-black-1:    rgba(0,0,0,0.1)
+$transp-black-0:    rgba(0,0,0,0)
+$transp-white-7:    rgba(255,255,255,0.7)
+$transp-white-5:    rgba(255,255,255,0.5)
+$transp-white-2:    rgba(255,255,255,0.2)
+$transp-white-1:    rgba(255,255,255,0.1)
+$transp-white-0:    rgba(255,255,255,0)
+$light-gray:        #FAFAFA
+
+=font($family, $size, $weight:normal)
+	font-family: $family
+	font-size: $size
+	font-weight: $weight
+
+=border-radius($top-left, $top-right, $bottom-left, $bottom-right)
+	border-top-left-radius: $top-left
+	border-top-right-radius: $top-right
+	border-bottom-left-radius: $bottom-left
+	border-bottom-right-radius: $bottom-right
+
+=padding-sides($p)
+	padding-left: $p
+	padding-right: $p
+
+=transition($time)
+	transition: all $time ease-in-out
+	-moz-transition: all $time ease-in-out
+	-ms-transition: all $time ease-in-out
+	-o-transition: all $time ease-in-out
+	-webkit-transition: all $time ease-in-out
+
+
+.hide
+	opacity: 0
+	+transition(.3s)
+
+.show
+	opacity: 1
+	+transition(.3s)
+
+.noDisplay
+	display: none !important
+
+.sticky
+	z-index: 4 !important
+
+
+.ssk-white
+	background-color: $white
+	color: $black
+
+$overlay-dark-bottom: linear-gradient(0deg, $transp-black-7, $transp-black-5 40%, $transp-black-0)
+
+=overlay-dark-bottom
+	background: linear-gradient(0deg, $transp-black-7, $transp-black-5 40%, $transp-black-0)
