@@ -10,8 +10,8 @@
 
 add_action( 'admin_enqueue_scripts', 'es_enqueue_admin_scripts' );
 function es_enqueue_admin_scripts() {
-	// wp_enqueue_script( 'vendor-scripts', get_stylesheet_directory_uri() . '/public/js/vendor.js', array(), false, true );
-	// wp_enqueue_script( 'admin-scripts', get_stylesheet_directory_uri() . '/public/js/admin.js', array(), false, true );
+	wp_enqueue_script( 'vendor-scripts', get_stylesheet_directory_uri() . '/dist/js/vendor.js', array(), false, true );
+	wp_enqueue_script( 'admin-scripts', get_stylesheet_directory_uri() . '/public/js/admin.js', array(), false, true );
 }
 
 add_filter( 'rwmb_meta_boxes', 'econstories_register_meta_boxes' );
