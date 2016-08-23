@@ -15759,7 +15759,7 @@ header.banner .wrap {
       width: 90%;
       margin: auto;
       display: block;
-      font-size: 1.5rem; }
+      font-size: 1.2rem; }
     .econstories-mailchimp-signup-widget form label {
       text-align: center;
       padding: 30px;
@@ -15769,23 +15769,26 @@ header.banner .wrap {
       background: rgba(255, 255, 255, 0.3);
       border: transparent;
       max-width: 600px;
-      display: inline-block; }
+      display: inline-block;
+      height: 50px; }
     .econstories-mailchimp-signup-widget form input[type="submit"] {
       content: '\f10a';
       font-family: "Ionicons";
-      font-size: 2rem;
+      font-size: 1.5rem;
       width: 40px;
       background: transparent;
-      position: relative; }
+      position: relative;
+      color: #FFFFFF; }
     .econstories-mailchimp-signup-widget form input:not([type="submit"]) {
-      margin-right: -60px;
+      margin-right: -50px;
       margin-bottom: 40px;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: 400; }
     .econstories-mailchimp-signup-widget form ::-webkit-input-placeholder {
       color: #FFFFFF;
-      font-size: 1.5rem;
-      font-weight: 400; }
+      font-size: 1.2rem;
+      font-weight: 400;
+      padding-left: 10px; }
 
 /* -------------------------
  * Carousel framework styling
