@@ -1,0 +1,14 @@
+{
+  "name": "widowtamer",
+  "homepage": "https://github.com/nathanford/widowtamer",
+  "_release": "16af1eb6b0",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "16af1eb6b08f7e7549e6c516f8a848254ddff2b9"
+  },
+  "_source": "git://github.com/nathanford/widowtamer.git",
+  "_target": "*",
+  "_originalSource": "nathanford/widowtamer",
+  "_direct": true
+}
