@@ -1,8 +1,10 @@
 <?php use Roots\Sage\Titles; ?>
-
+<section class="econstories-mailchimp-signup-widget">
+  <?php dynamic_sidebar('sidebar-email'); ?>
+</section>
 <div class="page-header">
 
-  <?php dynamic_sidebar('sidebar-email'); ?>
+
   <!-- Navigation -->
   <nav class="nav-secondary fixedsticky" style="top:0px">
     <div class="nav-filter-overlay"></div>

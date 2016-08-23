@@ -15749,40 +15749,40 @@ header.banner .wrap {
   margin-top: 60px;
   margin-bottom: 100px; }
 
-.econstories-mailchimp-signup-widget.widget-area {
+.econstories-mailchimp-signup-widget {
   background: #E6BC68;
   width: 100%; }
-  .econstories-mailchimp-signup-widget.widget-area form {
+  .econstories-mailchimp-signup-widget form {
     width: 100%;
     text-align: center; }
-    .econstories-mailchimp-signup-widget.widget-area form input, .econstories-mailchimp-signup-widget.widget-area form label {
+    .econstories-mailchimp-signup-widget form input, .econstories-mailchimp-signup-widget form label {
       width: 90%;
       margin: auto;
       display: block;
       font-size: 2rem; }
-    .econstories-mailchimp-signup-widget.widget-area form label {
+    .econstories-mailchimp-signup-widget form label {
       text-align: center;
       padding: 30px;
       color: #FFFFFF; }
-    .econstories-mailchimp-signup-widget.widget-area form input {
+    .econstories-mailchimp-signup-widget form input {
       border-radius: 4px;
       background: rgba(255, 255, 255, 0.3);
       border: transparent;
       max-width: 600px;
       display: inline-block; }
-    .econstories-mailchimp-signup-widget.widget-area form input[type="submit"] {
+    .econstories-mailchimp-signup-widget form input[type="submit"] {
       content: '\f10a';
       font-family: "Ionicons";
       font-size: 2rem;
       width: 40px;
       background: transparent;
       position: relative; }
-    .econstories-mailchimp-signup-widget.widget-area form input:not([type="submit"]) {
+    .econstories-mailchimp-signup-widget form input:not([type="submit"]) {
       margin-right: -60px;
       margin-bottom: 40px;
       font-size: 2rem;
       font-weight: 400; }
-    .econstories-mailchimp-signup-widget.widget-area form ::-webkit-input-placeholder {
+    .econstories-mailchimp-signup-widget form ::-webkit-input-placeholder {
       color: #FFFFFF;
       font-size: 2rem;
       font-weight: 400; }
