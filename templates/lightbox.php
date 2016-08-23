@@ -5,7 +5,7 @@
 		<div id="lightbox-learn-more"></div>
 		<div id="lightbox-extracredit-container">
 			<article class="extra-credit type-extra-credit status-publish category-extra-credit entry">
-	 			<a id="lightbox-affiliate-url" href="">
+	 			<a id="lightbox-affiliate-url" href="" target="_blank">
 		 			<div class="entry-featured-image-wrapper">
 		 				<div class="entry-featured-image" style=""></div>
 		 			</div>
@@ -27,7 +27,7 @@
 		<h2 class="entry-title">Who makes this?</h2>
 	</div>
 	<div class="entry-content">
-		<p class="entry-text">Hi, we're <a href="http://www.emergentorder.com">Emergent Order</a>. We're a full-service creative agency in Austin, TX, and EconStories.tv is our playground for making content about economics, public policy, and spontaneous order. If you liked EconStories, we'd love to meet you!
-		<a class="btn btn-primary" href="http://www.emergentorder.com">explore our other content</a>
+		<p class="entry-text">Hi, we're <a href="http://www.emergentorder.com" target="_blank">Emergent Order</a>. We're a full-service creative agency in Austin, TX, and EconStories.tv is our playground for making content about economics, public policy, and spontaneous order. If you liked EconStories, we'd love to meet you!
+		<a class="btn btn-primary" href="http://www.emergentorder.com" target="_blank">explore our other content</a>
 	</div>
 </div>
