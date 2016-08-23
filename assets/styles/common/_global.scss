@@ -4,7 +4,7 @@
 // FONTS
 // --------------------------
 
-$trade-gothic: 'Trade Gothic W01'; 
+$trade-gothic: 'Trade Gothic W01';
 $avenir: 'Avenir Next W00', Avenir Next, -apple-system, ".SFNSText-Regular", "San Francisco","Roboto", "Segoe UI", "Helvetica Neue", sans-serif;;
 
 
@@ -236,3 +236,7 @@ $input-group-addon-border-color: $input-border !default;
 
 //** Disabled cursor for form controls and buttons.
 $cursor-disabled:                not-allowed !default;
+
+body {
+  overflow-x: hidden;
+}

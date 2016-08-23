@@ -26,11 +26,15 @@
     "featherlight": "noelboss/featherlight#^1.4.1",
     "modernizr": "^3.3.1",
     "Ionicons": "ionicons#~2.0.1",
-    "filament-sticky": "fixed-sticky#^0.1.7",
+    "jquery-sticky": "garand/sticky#^1.0.3",
     "animatewithsass": "^3.2.2",
     "remodal": "^1.0.7",
     "background-blur": "^0.1.3",
-    "social-share-kit": "darklow/social-share-kit#^1.0.9"
+    "social-share-kit": "darklow/social-share-kit#^1.0.9",
+    "components-font-awesome": "components/font-awesome#^4.6.3",
+    "imagesloaded": "^4.1.0",
+    "tether": "^1.3.4",
+    "widowtamer": "nathanford/widowtamer"
   },
   "overrides": {
     "isotope": {
@@ -38,6 +42,16 @@
         "dist/isotope.pkgd.min.js"
       ],
       "dependencies": {}
+    },
+    "slick-carousel": {
+      "main": [
+        "slick/slick.css",
+        "slick/slick-theme.scss",
+        "slick/slick.min.js"
+      ]
+    },
+    "widowtamer": {
+      "main": ["widowtamer.js"]
     }
   }
 }

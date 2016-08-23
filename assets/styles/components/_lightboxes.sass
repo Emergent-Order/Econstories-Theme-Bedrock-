@@ -1,0 +1,198 @@
+#lightbox-container
+	background: transparent
+	+breakpoint($large)
+		max-width: 900px
+	+breakpoint($wide)
+		max-width: 1400px
+#lightbox-content
+	// display: none !important
+	background: transparent
+	box-shadow: none
+	display: flex
+	flex-direction: column
+	flex-wrap: nowrap
+	justify-content: space-between
+	align-items: center
+	+fadeInDown(1, 1.2s)
+	#lightbox-oembed-container
+		position: relative
+		padding-bottom: 56.25%
+		// padding-top: 35px
+		height: 0
+		width: 100%
+		overflow: hidden
+		iframe
+			+fadeIn(1, 1s)
+			position: absolute
+			width: 100%
+			height: 100%
+			top: 0
+			left: 0
+	#lightbox-learn-more
+		color: $white
+		font-size: 1.5rem
+		text-align: center
+		margin-top: 6rem
+		margin-bottom: 2rem
+
+	#lightbox-extracredit-container
+		cursor: pointer
+		display: flex
+		flex-direction: column
+		flex-wrap: nowrap
+		justify-content: space-between
+		align-items: center
+		article::before
+			content: "\f270"
+			font-family: FontAwesome
+			extend .fa
+			extend .fa-amazon
+			position: absolute
+			bottom: -50px
+			left: -20px
+			font-size: 8rem
+			opacity: .2
+			z-index: 0
+		article
+			overflow: hidden
+			position: relative
+			width: 90%
+			font-size: 2rem
+			background: $brand-primary
+			// +breakpoint($med)
+			// 	width: 50%
+			// +breakpoint($wide)
+			// 	width: 30%
+			margin: 20px
+			border-radius: $border-radius
+			box-shadow: $shadow
+			padding: 50px
+			.entry-title
+				color: $white
+				cursor: pointer
+				z-index: 10005
+				opacity: .9
+			.entry-author
+				color: $white
+				font-size: 1.3rem
+				cursor: pointer
+				z-index: 10005
+				opacity: .9
+			.entry-content
+				color: $transp-black-5
+				font-size: 1.1rem
+				z-index: 10005
+				opacity: .9
+
+			// overflow: hidden
+			&:hover
+				box-shadow: $shadow-distant
+				+transition(.5s)
+			.entry-featured-image-wrapper
+				height: 0px
+				width: 100%
+				overflow: hidden
+				position: relative
+				top: 0
+				left: 0
+				z-index: 1
+				display: block
+				+border-radius(4px, 4px, 0px, 0px)
+				.entry-featured-image
+					height: 100%
+					width: 100%
+					background-position: center center
+					background-size: cover !important
+					&:hover
+						transform: scale(1.04)
+						+transition(.3s)
+			.entry-footer
+				position: absolute
+				top: -40px
+				right: 20px
+				z-index: 2
+				.entry-meta .entry-categories
+					a
+						padding: 10px
+						+padding-sides(20px)
+						border-radius: 2px
+						display: inline-block
+						color: $white
+						background-color: $light-gray
+						text-decoration: none
+
+					a[href*="keynes-vs-hayek"]
+						background-color: $yellow
+
+					a[href*="econpop"]
+						background-color: $red
+
+					a[href*="uncategorized"]
+						display: none
+
+					a[href*="featured"]
+						display: none
+
+					a[href*="extra-credit"]
+						&:before
+							content: "\f2fc" !important
+							font-family: "Ionicons"
+							margin-right: 5px
+						background-color: $green
+
+			article.has-econstories-image .entry-header
+				margin-top: 300px
+			article.has-econstories-image .entry-featured-image-wrapper
+				height: 300px
+
+#lightbox-content.visible.active
+	top: 10% !important
+	z-index: 999 !important
+	a, h2.entry-title
+		text-decoration: none
+		color: $black
+		&:hover
+			color: $yellow
+
+#whomadethis-lightbox
+	font-size: 2rem
+	padding: 60px
+	+padding-sides(90px)
+	height: auto
+
+	.header
+		font-size: 3rem
+		text-align: center
+		border: none
+		margin-bottom: 1rem
+	.entry-content
+		display: flex
+		flex-direction: column
+		flex-wrap: nowrap
+		justify-content: center
+		font-size: 1.2rem
+		p
+			line-height: 1.3
+			margin-bottom: 0px
+		a
+			color: $green
+			text-decoration: none
+		a.btn
+			border-color: transparent
+			display: block
+			margin: auto
+			margin-top: 2rem
+			text-align: center
+			background-color: $green
+			border-radius: 2px
+			text-transform: lowercase
+			font-weight: medium
+			color: $white
+			font-weight: 500
+			padding: 15px
+	.entry-footer
+		text-align: center
+		h2
+			font-size: 4rem
+			margin-bottom: 4rem
+			margin-top: 4rem

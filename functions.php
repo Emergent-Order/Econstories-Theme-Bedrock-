@@ -44,3 +44,77 @@ function get_url_from_oembed($oembed) {
 	$url = substr($fragment, 0, $urlEnd);
 	return $url;
 }
+
+
+/* -----------------------
+ * Localize ajax scripts through admin-ajax
+ */
+
+add_action('wp_enqueue_scripts', 'ajax_enqueue_scripts');
+function ajax_enqueue_scripts() {
+	wp_enqueue_script('lightbox', get_stylesheet_directory_uri() . '/public/js/lightbox.js', array('jquery'), '1.0', true );
+
+	wp_localize_script( 'lightbox', 'lightboxy', array(
+		'ajax_url' => admin_url( 'admin-ajax.php')
+		));
+}
+
+/* -----------------------
+ * Build the AJAX response
+ */
+
+function extra_credit_html() {
+	global $wpdb;
+
+	// Get the URL from the AJAX call
+	$page_title = $_POST['title'];
+
+	// Find the posts they belong to
+	$post = get_page_by_title( $page_title, 'object', 'post' );
+	// console_log("Should be an ID: " . $post_id);
+	$extra_credit_id = rwmb_meta('econstories-extra-credit', array() ,$post->ID);
+	$extra_credit = get_post($extra_credit_id);
+	// console_log($extra_credit);
+
+	// Find the oembed code for the post
+	$oembed_raw = rwmb_meta('econstories-oembed', 'type=oembed', $post->ID);
+	$oembed = str_replace('?feature=oembed', '?rel=0&amp;autoplay=1', $oembed_raw);
+
+
+
+	$extra_credit_title = get_the_title($extra_credit_id);
+	$extra_credit_author = rwmb_meta('econstories-author-name', array(), $extra_credit_id);
+	$extra_credit_learn_more = rwmb_meta('econstories-affiliate-learn-more', array(), $extra_credit_id);
+	$extra_credit_content = get_post_field('post_content', $extra_credit_id);
+	$extra_credit_link = rwmb_meta('econstories-affiliate-url', array(), $extra_credit_id);
+
+	$images = rwmb_meta( 'econstories-affiliate-featured-image', array(), $extra_credit_id );
+	$first_image = array_values($images)[0];
+	$extra_credit_image = $first_image['full_url'];
+	// console_log($first_image);
+
+
+
+
+	// Add oembed to array
+	$response = array();
+
+	array_push(
+		$response,
+		$post,
+		$oembed,
+		$extra_credit_learn_more,
+		$extra_credit_title,
+		$extra_credit_author,
+		$extra_credit_content,
+		$extra_credit_link,
+		$extra_credit_image
+		);
+
+	echo json_encode($response);
+
+	wp_die();
+
+}
+add_action('wp_ajax_extra_credit_html', 'extra_credit_html');
+add_action('wp_ajax_nopriv_extra_credit_html', 'extra_credit_html');

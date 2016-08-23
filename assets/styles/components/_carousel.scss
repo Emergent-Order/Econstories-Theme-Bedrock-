@@ -1,0 +1,50 @@
+/* -------------------------
+ * Carousel framework styling
+ */
+
+.carousel {
+  margin-bottom: 0px !important;
+  .slick-dots {
+    bottom: 20px;
+    z-index: 20;
+    li button::before {
+      color: $white;
+      font-size: 26px;
+    }
+  }
+
+  .slick-arrow {
+    @extend .fa;
+    z-index: 20;
+    font-size: 36px;
+  }
+
+  .slick-next {
+    right: 10px;
+    @extend .fa-angle-right;
+  }
+  .slick-next::before {
+    @extend .fa;
+  }
+
+  .slick-prev {
+    left: 10px;
+    @extend .fa-angle-left;
+  }
+  .slick-prev::before {
+    @extend .fa;
+  }
+}
+
+/* -------------------------
+ * Carousel content
+ */
+
+.carousel:hover {
+  .overlay {
+    @include overlay-darker-full;
+    transition: all .25s;
+  }
+  transition: all .25s;
+
+}

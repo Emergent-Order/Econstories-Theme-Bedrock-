@@ -1,4 +1,4 @@
-(($) ->
+jQuery(document).ready ($) ->
   console.log "lightbox.coffee loaded"
 
   $('#lightbox-content').featherlight
@@ -11,7 +11,7 @@
   # For each article
   $articles.each ->
     # Find the featured image
-    $container = $(this).find('.entry-featured-image')
+    # $container = $(this).find('.entry-featured-image')
 
     # Check how long the style tag is.
     # If it's long, add special image class.
@@ -28,7 +28,7 @@
         getPostData($title)
 
 
-  $featuredArticles = $('header').find('article')
+  $featuredArticles = $('.featured').find('article')
   $featuredArticles.each ->
     $(this).on "click", ->
       event.preventDefault()
@@ -68,9 +68,9 @@
   #  Append retrieved data to the lightbox
   # --------------------------------------------------
   appendLightbox = (data,status,object) ->
-    # console.log "Data Handled: " + data
-    # console.log "Data Handled: " + status
-    # console.log "Data Handled: " + object
+    console.log "Data Handled: " + data
+    console.log "Data Handled: " + status
+    console.log "Data Handled: " + object
     oembed = $("#lightbox-oembed-container")
     extracredit_container = $("#lightbox-extracredit-container")
     learnmore = $("#lightbox-learn-more")
@@ -87,15 +87,15 @@
         if data[2]
           $('#lightbox-learn-more').append data[2]
         else
-          $('#lightbox-learn-more').append "Want to learn more? Check out this book we've picked for you:"
+          $('#lightbox-learn-more').append "Want to learn more? For extra credit, check out this product on Amazon:"
 
         if data[7]
           $('#lightbox-extracredit-container article').addClass "has-econstories-image"
 
-      unless data[2]
+      unless data[6]
         $('#lightbox-learn-more').addClass "hide"
 
-      unless data[3].length > 2
+      unless data[6]
         $('#lightbox-extracredit-container').addClass "hide"
 
     # console.log "Data appended"
@@ -135,4 +135,3 @@
 
   errorFunction = ->
     console.log "Something didn't work"
-)(jQuery)

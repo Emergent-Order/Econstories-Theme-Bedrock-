@@ -1,24 +1,20 @@
 (function() {
-  $(function() {
+  jQuery(document).ready(function($) {
     var articles;
+    console.log("init-carousel loaded");
     articles = $('.featured-header-wrapper article');
     if (articles.length > 1) {
-      $('.featured-header-wrapper').owlCarousel({
-        items: 1,
-        loop: true,
-        margin: 0,
-        center: true,
-        lazyContent: true
+      $('.featured-header-wrapper').slick({
+        slidesToShow: 1,
+        infinite: true,
+        lazyLoad: true,
+        dots: true
       });
     }
     return articles.each(function() {
-      var $img, $play, $play_container;
+      var $play, $play_container;
       $play = $(this).find('.play-button');
-      $play_container = $(this).find('.play-button-container');
-      $img = $(this).find('.featured-article-image').attr('style');
-      $img = $img.replace('background:url(', '');
-      $img = $img.replace(')', '');
-      return console.log($img);
+      return $play_container = $(this).find('.play-button-container');
     });
   });
 

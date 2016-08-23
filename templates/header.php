@@ -31,7 +31,7 @@
 
     if ($query->have_posts()) {
 
-      echo '<div class="featured-header-wrapper owl-carousel owl-theme">';
+      echo '<div class="featured-header-wrapper carousel">';
       $urls = array();
 
       while ( $query->have_posts()) {

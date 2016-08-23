@@ -1,4 +1,18 @@
-<article <?php post_class(); ?>>
+<?php
+  // Get the featured Meta Box image for this article
+  // and if there is one, set classes and url for formatting.
+  $images = rwmb_meta( 'econstories-featured-image', array(), $post->ID );
+  if ($images) {
+    $first_image = array_values($images)[0];
+    $full_image_src = $first_image['full_url'];
+    $classes = "has-econstories-image";
+  }
+  else {
+    $classes = "";
+  }
+ ?>
+
+<article <?php post_class($classes); ?>>
 
   <?php
 
@@ -15,15 +29,48 @@
 		$target = "";
 	}
 
-	$output = " ";
-	$output .= '<a href="' . $url . ' " class="action-link '. $actionClass . '"' . $target . '>';
-
   ?>
-  <header>
-    <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+  <!-- The lightbox link -->
+  <a href="<?= $url ?>" class="action-link <?= $actionClass ?>" <?= $target ?>>
+
+    <!-- If there are images defined by RWMB meta, print the image -->
+    <?php if ($images) { ?>
+    <div class="entry-header play-button-container">
+      <div class="overlay"></div>
+      <img class="play-button" src="<?= get_stylesheet_directory_uri() . '/dist/images/play-button.png'; ?>" />
+      <img src=" <?= $full_image_src; ?> " class="featured-image" />
+    </div>
+    <?php } ?>
+
+    <!-- The card body -->
+    <div class="entry-body">
+      <!-- Entry title -->
+      <a href="<?= $url ?>" class="action-link <?= $actionClass ?>" <?= $target ?>>
+        <h2 class="entry-title"><?php the_title(); ?></h2>
+        <?php if ($actionClass == "open-window") { ?>
+          <p class="amazon-cta">see this product on amazon<span class="fa fa-angle-right"></span></p>
+         <?php }?>
+       </a>
+
+
+      <!-- Entry summary -->
+      <div class="entry-summary">
+        <?php
+        if (rwmb_meta('econstories-description')) {
+          echo rwmb_meta('econstories-description');
+        } else {
+          the_excerpt();
+        }
+        ?>
+      </div>
+    </div>
+
+  <!-- /.lightbox link -->
+  </a>
+
+  <div class="entry-footer">
     <?php get_template_part('templates/entry-meta'); ?>
-  </header>
-  <div class="entry-summary">
-    <?php the_excerpt(); ?>
   </div>
+
+
 </article>

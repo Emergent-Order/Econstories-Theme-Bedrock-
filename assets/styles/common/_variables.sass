@@ -50,11 +50,7 @@ $light-gray:        #FAFAFA
 	font-size: $size
 	font-weight: $weight
 
-=border-radius($top-left, $top-right, $bottom-left, $bottom-right)
-	border-top-left-radius: $top-left
-	border-top-right-radius: $top-right
-	border-bottom-left-radius: $bottom-left
-	border-bottom-right-radius: $bottom-right
+
 
 =padding-sides($p)
 	padding-left: $p
@@ -91,3 +87,12 @@ $overlay-dark-bottom: linear-gradient(0deg, $transp-black-7, $transp-black-5 40%
 
 =overlay-dark-bottom
 	background: linear-gradient(0deg, $transp-black-7, $transp-black-5 40%, $transp-black-0)
+	transition: all .25s
+
+=overlay-dark-full
+	background: linear-gradient(0deg, $transp-black-5, $transp-black-5 40%, $transp-black-5)
+	transition: all .25s
+
+=overlay-darker-full
+	background: linear-gradient(0deg, $transp-black-7, $transp-black-7 40%, $transp-black-7)
+	transition: background .25s

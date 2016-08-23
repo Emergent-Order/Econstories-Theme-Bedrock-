@@ -1,11 +1,11 @@
-$ ->
+jQuery(document).ready ($) ->
   # Add "Clear" button to search bar
   $('nav.nav-secondary input').wrap('<div class="search-bar-wrap"></div>')
 
   $search_bar_wrap = $('nav.nav-secondary .search-bar-wrap')
   $search_bar = $('nav.nav-secondary input')
 
-  $search_bar_wrap.append('<a id="clear-search" href="#" data-action="clear" class="hide"><i class="ion ion-close-round"></i></a>')
+  # $search_bar_wrap.append('<a id="clear-search" href="#" data-action="clear" class="hide"><i class="ion ion-close-round"></i></a>')
   $clear = $('nav.nav-secondary #clear-search')
 
   # When a user clicks into the search bar,

@@ -1,4 +1,4 @@
-jQuery( document ).ready(function( $ ) {
+jQuery(function($) {
   console.log("nav.js loaded");
   var $navWrap = $('header.banner');
   var a = $navWrap.offset().top + 200;
@@ -10,5 +10,9 @@ jQuery( document ).ready(function( $ ) {
     else {
       $navWrap.removeClass("bg-inverse")
     }
+  });
+
+  $( '.fixedsticky' ).sticky({
+    topSpacing: 0
   });
 });

@@ -94,8 +94,8 @@ var cssTasks = function(filename) {
       return gulpif('*.less', less());
     })
     .pipe(function() {
-      return gulpif('*.scss', sass({
-        outputStyle: 'nested', // libsass doesn't support expanded yet
+      return gulpif('*.{scss,sass}', sass({
+        outputStyle: 'expanded', // libsass doesn't support expanded yet
         precision: 10,
         includePaths: ['.'],
         errLogToConsole: !enabled.failStyleTask
@@ -133,9 +133,6 @@ var jsTasks = function(filename) {
   return lazypipe()
     .pipe(function() {
       return gulpif(enabled.maps, sourcemaps.init());
-    })
-    .pipe(function() {
-      return gulpif('*.coffee', coffee())
     })
     .pipe(function() {
       return debug();

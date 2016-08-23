@@ -36,27 +36,27 @@ a {
 }
 
 
-a.underlinify, .underlinify a {
-	display: inline-block;
-	width: auto;
-	position: relative;
-}
-
-a.underlinify:hover::after, .underlinify a:hover::after {
-	opacity: 1;
-	transition: opacity .25s;
-}
-
-a.underlinify::after, .underlinify li a::after {
-	content: "";
-	position: absolute;
-	bottom: -6px;
-	left: 0px;
-	border-bottom: 2px solid $brand-primary;
-	border-radius: 2px;
-	width: 100%;
-	opacity: 0;
-}
+// a.underlinify, .underlinify a {
+// 	display: inline-block;
+// 	width: auto;
+// 	position: relative;
+// }
+//
+// a.underlinify:hover::after, .underlinify a:hover::after {
+// 	opacity: 1;
+// 	transition: opacity .25s;
+// }
+//
+// a.underlinify::after, .underlinify li a::after {
+// 	content: "";
+// 	position: absolute;
+// 	bottom: -6px;
+// 	left: 0px;
+// 	border-bottom: 2px solid $brand-primary;
+// 	border-radius: 2px;
+// 	width: 100%;
+// 	opacity: 0;
+// }
 
 a:hover {
 	text-decoration: none;

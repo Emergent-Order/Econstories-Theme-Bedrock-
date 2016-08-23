@@ -1,0 +1,128 @@
+=border-radius($top-left:4px, $top-right:4px, $bottom-left:4px, $bottom-right:4px)
+	border-top-left-radius: $top-left
+	border-top-right-radius: $top-right
+	border-bottom-left-radius: $bottom-left
+	border-bottom-right-radius: $bottom-right
+
+main .content
+	margin: auto
+	padding-top: 40px
+
+	article
+		width: 90%
+		margin: 10px
+		padding: 20px
+		padding-top: 50px
+		margin-top: 50px
+		position: relative
+		+breakpoint($media-range-medium)
+			width: 43%
+			margin: 3.5%
+			padding: 50px
+		+breakpoint($wide)
+			width: 31%
+			margin: 1.15%
+			padding: 50px
+		h2.entry-title a
+			&:hover
+				color: $yellow
+
+		border-radius: $border-radius
+		box-shadow: $shadow
+		// overflow: hidden
+		&:hover
+			box-shadow: $shadow-distant
+			+transition(.5s)
+			.overlay, .play-button
+				opacity: 1
+				transition: opacity .25s
+			.amazon-cta
+				color: $red
+				transition: color .25s
+		.entry-header
+			height: 300px
+			width: 100%
+			overflow: hidden
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 1
+			+border-radius(4px, 4px, 0px, 0px)
+		.overlay, .play-button
+			opacity: .2
+		.overlay
+			+overlay-dark-full
+		.play-button
+			max-width: 100px
+			max-height: 100px
+		.featured-image
+			height: 100%
+			width: 100%
+			object-fit: cover
+			&:hover
+				transform: scale(1.04)
+				+transition(.3s)
+		.entry-footer
+			position: absolute
+			top: -20px
+			right: 20px
+			z-index: 2
+			.tags
+				a
+					padding: 10px
+					+padding-sides(20px)
+					border-radius: 2px
+					display: inline-block
+					color: $white
+					background-color: $light-gray
+					text-decoration: none
+					+font($trade-gothic, 16px)
+					font-weight: bold
+					text-transform: uppercase
+				a.extra-credit-star
+					&:before
+						content: "\f2fc" !important
+						font-family: "Ionicons"
+						margin-right: 5px
+				a[data-filter*="keynes-vs-hayek"]
+					background-color: $yellow
+
+				a[data-filter*="econpop"]
+					background-color: $red
+
+				a[data-filter*="love-gov"]
+					background-color: $love-gov-pink
+
+				a[data-filter*="talks"]
+					background-color: $dark-gray
+
+				a[data-filter*="uncategorized"]
+					display: none
+
+				a[data-filter*="featured"]
+					display: none
+
+				a[data-filter*="extra-credit"]
+					&:before
+						content: "\f2fc" !important
+						font-family: "Ionicons"
+						margin-right: 5px
+					background-color: $green
+
+		// Style the Amazon CTA for extra-credit cards
+		.amazon-cta
+			color: $gray
+			text-transform: uppercase
+			margin-bottom: 1rem
+			+font($trade-gothic, 1rem)
+			font-weight: bold
+			cursor: pointer
+			span
+				margin-left: .5rem
+
+	article.has-econstories-image
+		padding-top: 20px
+	article.has-econstories-image .entry-body
+		margin-top: 300px
+
+	article.extra-credit

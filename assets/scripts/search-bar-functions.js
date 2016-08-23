@@ -1,10 +1,9 @@
 (function() {
-  $(function() {
+  jQuery(document).ready(function($) {
     var $clear, $search, $search_bar, $search_bar_wrap, lastScrollTop;
     $('nav.nav-secondary input').wrap('<div class="search-bar-wrap"></div>');
     $search_bar_wrap = $('nav.nav-secondary .search-bar-wrap');
     $search_bar = $('nav.nav-secondary input');
-    $search_bar_wrap.append('<a id="clear-search" href="#" data-action="clear" class="hide"><i class="ion ion-close-round"></i></a>');
     $clear = $('nav.nav-secondary #clear-search');
     $search_bar.focus(function() {
       return $clear.removeClass('hide');

@@ -18,7 +18,6 @@ use Roots\Sage\Wrapper;
       do_action('get_header');
       get_template_part('templates/header');
     ?>
-    <div class="wrap content" role="document">
       <main class="main">
         <?php include Wrapper\template_path(); ?>
       </main><!-- /.main -->
@@ -27,7 +26,11 @@ use Roots\Sage\Wrapper;
           <?php include Wrapper\sidebar_path(); ?>
         </aside><!-- /.sidebar -->
       <?php endif; ?>
-    </div><!-- /.wrap -->
+
+    <!-- Lightboxes -->
+    <section id="lightboxes">
+      <?php get_template_part('templates/lightbox'); ?>
+    </section>
     <?php
       do_action('get_footer');
       get_template_part('templates/footer');

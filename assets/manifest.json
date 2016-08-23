@@ -1,13 +1,23 @@
 {
   "dependencies": {
     "main.js": {
+      "bower": ["filament-sticky","slick-carousel","remodal","jquery-sticky","tether","bootstrap","widowtamer"],
       "files": [
         "scripts/main.js",
         "scripts/nav.js",
-        "scripts/lightbox.js"
+        "scripts/lightbox.js",
+        "scripts/init-carousel.js",
+        "scripts/utilities.js",
+        "scripts/attach-whomadethis-modal.js"
       ],
-      "bower": ["filament-sticky"],
       "main": true
+    },
+    "grid.js": {
+      "bower": ["isotope","imagesloaded"],
+      "files": [
+        "scripts/init-masonry.js",
+        "scripts/search-bar-functions.js"
+      ]
     },
     "main.css": {
       "files": [

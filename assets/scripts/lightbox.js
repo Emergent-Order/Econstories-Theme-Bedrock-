@@ -1,5 +1,5 @@
 (function() {
-  (function($) {
+  jQuery(document).ready(function($) {
     var $articles, $featuredArticles, appendLightbox, deleteAllThings, errorFunction, extracredit, getPostData, oembed, openLightbox, post;
     console.log("lightbox.coffee loaded");
     $('#lightbox-content').featherlight;
@@ -8,8 +8,7 @@
     oembed = "";
     extracredit = "";
     $articles.each(function() {
-      var $container, $title;
-      $container = $(this).find('.entry-featured-image');
+      var $title;
       $title = $(this).find('h2.entry-title').text();
       return $(this).on("click", function() {
         if ($(this).find('a').hasClass('open-lightbox')) {
@@ -18,7 +17,7 @@
         }
       });
     });
-    $featuredArticles = $('header').find('article');
+    $featuredArticles = $('.featured').find('article');
     $featuredArticles.each(function() {
       return $(this).on("click", function() {
         var $title;
@@ -46,6 +45,9 @@
     };
     appendLightbox = function(data, status, object) {
       var extracredit_container, learnmore;
+      console.log("Data Handled: " + data);
+      console.log("Data Handled: " + status);
+      console.log("Data Handled: " + object);
       oembed = $("#lightbox-oembed-container");
       extracredit_container = $("#lightbox-extracredit-container");
       learnmore = $("#lightbox-learn-more");
@@ -59,16 +61,16 @@
           if (data[2]) {
             $('#lightbox-learn-more').append(data[2]);
           } else {
-            $('#lightbox-learn-more').append("Want to learn more? Check out this book we've picked for you:");
+            $('#lightbox-learn-more').append("Want to learn more? For extra credit, check out this product on Amazon:");
           }
           if (data[7]) {
             $('#lightbox-extracredit-container article').addClass("has-econstories-image");
           }
         }
-        if (!data[2]) {
+        if (!data[6]) {
           $('#lightbox-learn-more').addClass("hide");
         }
-        if (!(data[3].length > 2)) {
+        if (!data[6]) {
           $('#lightbox-extracredit-container').addClass("hide");
         }
       }
@@ -93,6 +95,6 @@
     return errorFunction = function() {
       return console.log("Something didn't work");
     };
-  })(jQuery);
+  });
 
 }).call(this);

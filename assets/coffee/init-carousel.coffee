@@ -1,13 +1,13 @@
-$ ->
+jQuery(document).ready ($) ->
+	console.log "init-carousel loaded"
 	# If more than 1 article in Featured Header, then initiate carousel
 	articles = $('.featured-header-wrapper article')
 	if articles.length > 1
-		$('.featured-header-wrapper').owlCarousel
-			items: 1
-			loop: true
-			margin: 0
-			center: true
-			lazyContent: true
+		$('.featured-header-wrapper').slick
+			slidesToShow: 1
+			infinite: true
+			lazyLoad: true
+			dots: true
 
 	# $play_shape = '
 	# <svg id="svg" viewBox="0 0 191 192" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -22,14 +22,6 @@ $ ->
 		# Get the "play-button" container div
 		$play = $(this).find('.play-button')
 		$play_container = $(this).find('.play-button-container')
-
-
-
-		# Get the URL of the sibling div's background image
-		$img = $(this).find('.featured-article-image').attr('style')
-		$img = $img.replace('background:url(', '')
-		$img = $img.replace(')', '')
-		console.log $img
 
 		# $play.attr('style', 'background-image:url(' + $img + ')')
 		# $play.attr('style', 'background:red')

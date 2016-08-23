@@ -1,7 +1,10 @@
 (function() {
-  $(function() {
-    return $('.whomadethis-lightbox').click(function() {
-      return $('#whomadethis-lightbox').modal('show');
+  jQuery(document).ready(function($) {
+    var whomade;
+    console.log("whomadethis loaded");
+    whomade = $('#whomadethis-lightbox').remodal();
+    $('.who-made-this a').click(function() {
+      return whomade.open();
     });
   });
 
