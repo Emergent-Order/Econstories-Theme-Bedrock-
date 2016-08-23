@@ -52,7 +52,7 @@ function get_url_from_oembed($oembed) {
 
 add_action('wp_enqueue_scripts', 'ajax_enqueue_scripts');
 function ajax_enqueue_scripts() {
-	wp_enqueue_script('lightbox', get_stylesheet_directory_uri() . '/public/js/lightbox.js', array('jquery'), '1.0', true );
+	// wp_enqueue_script('lightbox', get_stylesheet_directory_uri() . '/dist/js/lightbox.js', array('jquery'), '1.0', true );
 
 	wp_localize_script( 'lightbox', 'lightboxy', array(
 		'ajax_url' => admin_url( 'admin-ajax.php')
