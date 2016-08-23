@@ -5,7 +5,6 @@
       "files": [
         "scripts/main.js",
         "scripts/nav.js",
-        "scripts/lightbox.js",
         "scripts/init-carousel.js",
         "scripts/utilities.js",
         "scripts/attach-whomadethis-modal.js"

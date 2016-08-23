@@ -83,7 +83,8 @@
         layoutMode: 'masonry',
         percentPosition: true,
         masonry: {
-          columnWidth: 'article'
+          columnWidth: 'article',
+          gutterWidth: '.gutter-sizer'
         }
       });
     });

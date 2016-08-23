@@ -94,6 +94,7 @@ jQuery(document).ready ($) ->
 			percentPosition: true
 			masonry:
 				columnWidth: 'article'
+				gutterWidth: '.gutter-sizer'
 
 	# --------------------------------------------------
 	#  When clicked, subnav menu items should filter the

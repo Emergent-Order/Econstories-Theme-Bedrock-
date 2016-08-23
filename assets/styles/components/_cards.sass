@@ -8,9 +8,15 @@ main .content
 	margin: auto
 	padding-top: 40px
 
+	.gutter-sizer
+		width: 0
+		+breakpoint($med)
+			width: 20px
+
 	article
 		width: 90%
 		margin: 10px
+		margin-left: 5%
 		padding: 20px
 		padding-top: 50px
 		margin-top: 50px
