@@ -3,7 +3,7 @@
 
 <?php
   global $wp_query;
-  $args = array_merge( $wp_query->query_vars, array( 'post_type' => array('extra-credit', 'post' ) ));
+  $args = array_merge( $wp_query->query_vars, array( 'post_type' => array('extra-credit', 'post' ), 'orderby' => 'rand' ));
   query_posts( $args );
 
 ?>
