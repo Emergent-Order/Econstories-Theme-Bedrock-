@@ -63,7 +63,7 @@
         if (rwmb_meta('econstories-description')) {
           echo rwmb_meta('econstories-description');
         } else {
-          the_excerpt();
+          the_content();
         }
         ?>
       </div>
