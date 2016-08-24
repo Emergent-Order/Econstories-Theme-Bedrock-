@@ -28,7 +28,7 @@
       endif;
       ?>
       <div class="search-bar-wrap">
-        <input type="text" class="quicksearch" placeholder="Search">
+        <input type="text" class="quicksearch" placeholder="Filter Content">
         <a id="clear-search" href="#" data-action="clear" class="hide"><i class="ion ion-close-round"></i></a>
       </div>
 

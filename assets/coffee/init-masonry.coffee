@@ -103,7 +103,7 @@ jQuery(document).ready ($) ->
 	#  formatting to the correct filter.
 	# --------------------------------------------------
 	$filter = $('ul#menu-filter')
-	$filter.prepend "<li id='menu-all' data-sort-by='-1' class='menu-item menu-item-type-taxonomy menu-item-object-category'><a class='show-all' href=''>all</a></li>"
+	$filter.prepend "<li id='menu-all' data-sort-by='-1' class='menu-item menu-item-type-taxonomy menu-item-object-category'><a class='show-all selected' href=''>all</a></li>"
 
 	$filterItems = []
 	$('#menu-filter li').each ->
