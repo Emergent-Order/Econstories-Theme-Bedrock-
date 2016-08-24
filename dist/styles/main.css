@@ -9787,12 +9787,12 @@ main .content {
       main .content article {
         width: 43%;
         margin: 3.5%;
-        padding: 50px; } }
+        padding: 30px; } }
     @media (min-width: 1400px) {
       main .content article {
         width: 31%;
         margin: 1.15%;
-        padding: 50px; } }
+        padding: 30px; } }
     main .content article h2.entry-title a:hover {
       color: #E6BC68; }
     main .content article:hover {
