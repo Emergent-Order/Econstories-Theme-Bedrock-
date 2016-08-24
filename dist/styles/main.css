@@ -9407,12 +9407,15 @@ header.banner {
 
 a.brand {
   font-family: "Trade Gothic W01";
-  font-weight: bold;
+  font-weight: light;
   text-transform: uppercase;
   font-size: 1.2rem;
   margin-bottom: 0px;
   line-height: 1;
   color: #FFFFFF; }
+  a.brand strong {
+    font-weight: bolder;
+    margin-left: .15rem; }
 
 .brand-tagline {
   font-family: "Trade Gothic W01";
@@ -10135,6 +10138,10 @@ main .content {
       font-size: 4rem;
       margin-bottom: 4rem;
       margin-top: 4rem; }
+
+.remodal-wrapper button.remodal-close {
+  top: -40px;
+  left: -40px; }
 
 /* === LAYOUTS === */
 section.featured {

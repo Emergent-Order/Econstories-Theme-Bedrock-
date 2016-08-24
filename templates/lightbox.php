@@ -27,7 +27,7 @@
 		<h2 class="entry-title">Who makes this?</h2>
 	</div>
 	<div class="entry-content">
-		<p class="entry-text">Hi, we're <a href="http://www.emergentorder.com" target="_blank">Emergent Order</a>. We're a full-service creative agency in Austin, TX, and EconStories.tv is our playground for making content about economics, public policy, and spontaneous order. If you liked EconStories, we'd love to meet you!
+		<p class="entry-text">Hi, we're <a href="http://www.emergentorder.com" target="_blank">Emergent Order</a>, an integrated creative agency with a passion for complex ideas and compelling entertainment. EconStories is a hub for original EO content focused on economics and public policy. Want to know more about us? Take a look at other work.
 		<a class="btn btn-primary" href="http://www.emergentorder.com" target="_blank">explore our other content</a>
 	</div>
 </div>
