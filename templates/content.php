@@ -1,7 +1,13 @@
 <?php
   // Get the featured Meta Box image for this article
   // and if there is one, set classes and url for formatting.
-  $images = rwmb_meta( 'econstories-featured-image', array(), $post->ID );
+  if (get_post_type() == 'post') {
+    $images = rwmb_meta( 'econstories-featured-image', array(), $post->ID );
+  }
+  elseif (get_post_type() == 'extra-credit') {
+    $images = rwmb_meta( 'econstories-affiliate-featured-image', array(), $post->ID );
+  }
+
   if ($images) {
     $first_image = array_values($images)[0];
     $full_image_src = $first_image['full_url'];
@@ -12,7 +18,7 @@
   }
 
   if (get_post_type() == 'extra-credit') {
-    $classes .= "category-extra-credit";
+    $classes .= " category-extra-credit";
   }
  ?>
 
@@ -41,8 +47,14 @@
     <?php if ($images) { ?>
     <div class="entry-header play-button-container">
       <div class="overlay"></div>
-      <img class="play-button" src="<?= get_stylesheet_directory_uri() . '/dist/images/play-button.png'; ?>" />
+
+      <?php if (get_post_type($post->ID) == 'extra-credit') { ?>
+        <img class="play-button" src="<?= get_stylesheet_directory_uri() . '/dist/images/external-link.png'; ?>" />
+      <?php } else { ?>
+        <img class="play-button" src="<?= get_stylesheet_directory_uri() . '/dist/images/play-button.png'; ?>" />
+      <?php } ?>
       <img src=" <?= $full_image_src; ?> " class="featured-image" />
+
     </div>
     <?php } ?>
 

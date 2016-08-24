@@ -38,8 +38,7 @@ function econstories_register_meta_boxes( $meta_boxes ) {
                 'description'  => __( 'Super Short Description', 'text' ),
                 'desc'  => 'Let\'s keep it under 300 characters.',
                 'id'    => $prefix . 'description',
-                'type'  => 'textarea',
-								'admin_columns' => 'replace tags'
+                'type'  => 'textarea'
             ),
 
             // Video URL meta box field
@@ -58,7 +57,7 @@ function econstories_register_meta_boxes( $meta_boxes ) {
                 'desc'  => 'Pick a picture for the card',
                 'id'    => $prefix . 'featured-image',
                 'type'  => 'plupload_image',
-								'admin_columns' => 'replace author',
+								'admin_columns' => 'before title',
             ),
 
             // Associated Extra Credit
@@ -73,7 +72,7 @@ function econstories_register_meta_boxes( $meta_boxes ) {
                 'query_args' => array(
                 	'post_type' => 'extra-credit',
                 ),
-								'admin_columns' => true
+								'admin_columns' => 'replace tags'
 
             ),
         )
@@ -87,7 +86,10 @@ function econstories_register_meta_boxes( $meta_boxes ) {
                 'name' => __( 'Affiliate Link', 'affiliate-url' ),
                 'id'   => $prefix . 'affiliate-url',
                 'type' => 'url',
-								'admin_columns' => true
+								'admin_columns' => array(
+									'position' => 'replace tags', // Replace default 'Categories' column
+									'title'    => 'Link',              // Custom title
+								)
             ),
             array(
                 'name' => __( 'Author Name', 'author-name' ),
@@ -99,7 +101,10 @@ function econstories_register_meta_boxes( $meta_boxes ) {
                 'id'   => $prefix . 'affiliate-featured-image',
                 'desc'  => 'Pick a picture for the card',
                 'type' => 'plupload_image',
-								'admin_columns' => true
+								'admin_columns' => array(
+									'position' => 'before title', // Replace default 'Categories' column
+									'title'    => 'Image',              // Custom title
+								)
             ),
             array(
                 'name' => __( 'Affiliate "Learn More" Text', 'affiliate-learn-more' ),
@@ -152,3 +157,14 @@ function econstories_register_taxonomy_meta_boxes($cat_meta_boxes)
 	return $cat_meta_boxes;
 }
 add_filter('rwmb_meta_boxes', 'econstories_register_taxonomy_meta_boxes');
+
+function my_manage_columns( $columns ) {
+  unset($columns['comments']);
+	unset($columns['author']);
+  return $columns;
+}
+
+function my_column_init() {
+  add_filter( 'manage_posts_columns' , 'my_manage_columns' );
+}
+add_action( 'admin_init' , 'my_column_init' );
