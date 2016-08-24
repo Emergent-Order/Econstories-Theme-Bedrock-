@@ -1,15 +1,18 @@
 (function() {
   jQuery(document).ready(function($) {
     var $clear, $search, $search_bar, $search_bar_wrap, lastScrollTop;
+    console.log("search-bar-functions loaded");
     $('nav.nav-secondary input').wrap('<div class="search-bar-wrap"></div>');
-    $search_bar_wrap = $('nav.nav-secondary .search-bar-wrap');
-    $search_bar = $('nav.nav-secondary input');
+    $search_bar_wrap = $('.nav-secondary .search-bar-wrap');
+    $search_bar = $('.nav-secondary input');
     $clear = $('nav.nav-secondary #clear-search');
-    $search_bar.focus(function() {
-      return $clear.removeClass('hide');
+    $search_bar.on('focus', function() {
+      console.log("Focused");
+      $clear.removeClass('hide');
     });
     $search_bar.off('focus', function() {
-      return $clear.addClass('hide');
+      console.log("un-focused");
+      $clear.addClass('hide');
     });
     $clear.click(function() {
       event.preventDefault();
@@ -23,7 +26,7 @@
     console.log($search);
     if ($(window).width() <= 640) {
       lastScrollTop = 0;
-      return $(window).on("scroll", function() {
+      $(window).on("scroll", function() {
         var currentScrollTop, up;
         currentScrollTop = $(this).scrollTop();
         if (currentScrollTop < lastScrollTop) {
@@ -41,8 +44,9 @@
           $search.addClass("hide");
           $search.addClass("small");
         }
-        return lastScrollTop = currentScrollTop;
+        lastScrollTop = currentScrollTop;
       });
+      return;
     }
   });
 

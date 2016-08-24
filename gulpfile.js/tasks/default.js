@@ -94,7 +94,7 @@ var cssTasks = function(filename) {
       return gulpif('*.less', less());
     })
     .pipe(function() {
-      return gulpif('*.{scss,sass}', sass({
+      return gulpif('*.scss', sass({
         outputStyle: 'expanded', // libsass doesn't support expanded yet
         precision: 10,
         includePaths: ['.'],
@@ -309,6 +309,7 @@ gulp.task('default', ['clean'], function() {
 gulp.task('fast-css', function() {
  return gulp.src([path.source + 'styles/**/*.{scss,sass,css}'])
    .pipe(sass())
+   .pipe(autoprefixer())
    .on('error', function(err) {
      console.error(err.message);
      this.emit('end');
@@ -322,4 +323,9 @@ gulp.task('coffee', function() {
  return gulp.src([path.source + 'coffee/*.coffee'])
    .pipe(coffee())
    .pipe(gulp.dest(path.source + 'scripts'));
+});
+
+gulp.task('autoprefix', function() {
+ return gulp.src(['/dist/' + 'styles/*.css'])
+   .pipe(autoprefixer())
 });

@@ -58,9 +58,11 @@ section.featured {
   z-index: 5;
   width: 100px;
   height: 100px;
-  top: 200px;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
   @include breakpoint($med) {
-    top: auto;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
     width: 200px;
     height: 200px;
   }

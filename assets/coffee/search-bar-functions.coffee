@@ -1,19 +1,28 @@
 jQuery(document).ready ($) ->
+  console.log "search-bar-functions loaded"
+
+
+
+
   # Add "Clear" button to search bar
   $('nav.nav-secondary input').wrap('<div class="search-bar-wrap"></div>')
 
-  $search_bar_wrap = $('nav.nav-secondary .search-bar-wrap')
-  $search_bar = $('nav.nav-secondary input')
+  $search_bar_wrap = $('.nav-secondary .search-bar-wrap')
+  $search_bar = $('.nav-secondary input')
 
   # $search_bar_wrap.append('<a id="clear-search" href="#" data-action="clear" class="hide"><i class="ion ion-close-round"></i></a>')
   $clear = $('nav.nav-secondary #clear-search')
 
   # When a user clicks into the search bar,
   # show the clear button.
-  $search_bar.focus ->
+  $search_bar.on 'focus', ->
+    console.log "Focused"
     $clear.removeClass 'hide'
+    return
   $search_bar.off 'focus', ->
+    console.log "un-focused"
     $clear.addClass 'hide'
+    return
 
   # When a user clicks the clear button,
   # clear the text from the search bar and
@@ -28,6 +37,7 @@ jQuery(document).ready ($) ->
 
   $search = $search_bar_wrap
   console.log $search
+
   if $(window).width() <= 640
     lastScrollTop = 0
     $(window).on "scroll", ->
@@ -49,3 +59,6 @@ jQuery(document).ready ($) ->
         $search.addClass "hide"
         $search.addClass "small"
       lastScrollTop = currentScrollTop
+      return
+    return
+  return

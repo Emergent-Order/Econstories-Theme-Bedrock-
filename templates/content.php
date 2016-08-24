@@ -10,6 +10,10 @@
   else {
     $classes = "";
   }
+
+  if (get_post_type() == 'extra-credit') {
+    $classes .= "category-extra-credit";
+  }
  ?>
 
 <article <?php post_class($classes); ?>>

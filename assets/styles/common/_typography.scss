@@ -24,7 +24,7 @@ p {
 
 .entry-title,
 .entry-title a {
-  @font($trade-gothic, 1.4em);
+  @include font($trade-gothic, 1.4em);
 	text-transform: uppercase;
 	text-decoration: none;
 	font-weight: bold;

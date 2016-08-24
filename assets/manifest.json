@@ -3,10 +3,10 @@
     "main.js": {
       "bower": ["filament-sticky","slick-carousel","remodal","jquery-sticky","tether","bootstrap","widowtamer"],
       "files": [
+        "scripts/utilities.js",
         "scripts/main.js",
         "scripts/nav.js",
         "scripts/init-carousel.js",
-        "scripts/utilities.js",
         "scripts/attach-whomadethis-modal.js"
       ],
       "main": true
@@ -17,6 +17,9 @@
         "scripts/init-masonry.js",
         "scripts/search-bar-functions.js"
       ]
+    },
+    "lightbox.js": {
+      "files": ["scripts/lightbox.js"]
     },
     "main.css": {
       "files": [
