@@ -108,12 +108,15 @@ jQuery(document).ready ($) ->
 	$filterItems = []
 	$('#menu-filter li').each ->
 		$filterItems.push($(this))
+		$(this).find('a').addClass "normal-filter"
 
-		$(this).click ->
+		$(this).find('a').click ->
 			event.preventDefault()
-			$filter = ".category-" + getSlugName($(this).find('a'))
-			if $(this).find('a').attr('class') == 'show-all'
+
+			if $(this).attr('class').includes('show-all')
 				$filter = "*"
+			else
+				$filter = ".category-" + getSlugName($(this))
 
 			filterContent($filter)
 			return false

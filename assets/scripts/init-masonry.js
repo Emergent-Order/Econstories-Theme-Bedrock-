@@ -19,11 +19,13 @@
     $filterItems = [];
     $('#menu-filter li').each(function() {
       $filterItems.push($(this));
-      return $(this).click(function() {
+      $(this).find('a').addClass("normal-filter");
+      return $(this).find('a').click(function() {
         event.preventDefault();
-        $filter = ".category-" + getSlugName($(this).find('a'));
-        if ($(this).find('a').attr('class') === 'show-all') {
+        if ($(this).attr('class').includes('show-all')) {
           $filter = "*";
+        } else {
+          $filter = ".category-" + getSlugName($(this));
         }
         filterContent($filter);
         return false;
