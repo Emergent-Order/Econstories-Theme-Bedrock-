@@ -142,14 +142,14 @@ header.banner .wrap
 			a
 				display: inline-block
 				// background-color: $white
-				margin: 5px
+				margin: 10px
 				text-align: center
 				border-radius: 2px
 				color: $white
 				i
 					color: $white
 				&:hover
-					color: $white
+					color: $brand-primary
 					+transition(.3s)
 			a:not([class*="youtube"])
 				display: none
@@ -217,7 +217,8 @@ header.banner .wrap
 				padding: 10px 20px
 				border-radius: 2px
 				&:hover
-					color: $yellow
+					color: darken($brand-primary, 20%)
+					transition: color .25s
 			li a.selected
 				background-color: $yellow
 				color: $white !important

@@ -15,9 +15,10 @@
     <!-- Social Media -->
     <!-- no javascript, these are just outbound links -->
       <div class="social-icons">
-          <a href="http://www.youtube.com/econstories" target="_blank" class="ssk ssk-white ssk-round ssk-youtube"></a>
-          <a href="http://www.facebook.com/econstories" target="_blank" class="ssk ssk-white ssk-round ssk-facebook"></a>
-          <a href="http://www.twitter.com/econstories" target="_blank" class="ssk ssk-white ssk-round ssk-twitter"></a>
+          <a href="http://www.zazzle.com/econstories" target="_blank" class="fa fa-shopping-cart"></a>
+          <a href="http://www.youtube.com/econstories" target="_blank" class="fa fa-youtube"></a>
+          <a href="http://www.facebook.com/econstories" target="_blank" class="fa fa-facebook"></a>
+          <a href="http://www.twitter.com/econstories" target="_blank" class="fa fa-twitter"></a>
       </div>
 
 

@@ -43,7 +43,7 @@ function scrollBackUp() {
     });
   } else {
     jQuery('html, body').animate({
-      scrollTop: 900
+      scrollTop: 920
     });
   }
 }

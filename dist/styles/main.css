@@ -9544,14 +9544,14 @@ header.banner .wrap {
             order: 3; }
     header.banner .wrap .social-icons a {
       display: inline-block;
-      margin: 5px;
+      margin: 10px;
       text-align: center;
       border-radius: 2px;
       color: #FFFFFF; }
       header.banner .wrap .social-icons a i {
         color: #FFFFFF; }
       header.banner .wrap .social-icons a:hover {
-        color: #FFFFFF; }
+        color: #E6BC68; }
     header.banner .wrap .social-icons a:not([class*="youtube"]) {
       display: none; }
       @media (min-width: 900px) {
@@ -9638,7 +9638,9 @@ header.banner .wrap {
         padding: 10px 20px;
         border-radius: 2px; }
         .nav-secondary .wrap .menu-filter-container li a:hover {
-          color: #E6BC68; }
+          color: #c79021;
+          -webkit-transition: color .25s;
+                  transition: color .25s; }
       .nav-secondary .wrap .menu-filter-container li a.selected {
         background-color: #E6BC68;
         color: #FFFFFF !important; }
