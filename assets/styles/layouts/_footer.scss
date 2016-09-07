@@ -4,6 +4,9 @@ footer {
   padding: 40px;
   text-align: center;
   margin-top: 40px;
+  .container {
+    max-width: 700px;
+  }
   h3, h5, a {
     display: flex;
     flex-direction: row;
@@ -18,11 +21,18 @@ footer {
     #logo {
       background: url('../images/eo-logo-green.png');
       background-size: cover;
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
       display: inline-block;
       vertical-align: center;
       margin-left: .5rem;
     }
+  }
+  p {
+    margin-top: 1rem;
+  }
+  p:nth-of-type(2) {
+    font-size: .75rem;
+    color: $transp-black-2;
   }
 }

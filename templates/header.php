@@ -44,6 +44,9 @@
         $full_image_src = $first_image['full_url'];
 
         $snippet = rwmb_meta( 'econstories-description' );
+        if (wp_is_mobile()) {
+          $snippet = myTruncate($snippet, 200, " ");
+        }
 
         $oembed = rwmb_meta('econstories-oembed');
 

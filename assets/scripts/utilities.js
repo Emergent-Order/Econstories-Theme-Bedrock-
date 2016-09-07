@@ -1,4 +1,4 @@
-
+var $ = jQuery.noConflict();
 // --------------------------------------------------
 //  Given a value, filter the Isotope content, scroll
 //  back up to the top, and select the correct filter.
