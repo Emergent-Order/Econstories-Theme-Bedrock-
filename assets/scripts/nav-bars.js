@@ -24,7 +24,11 @@
     $nav_filter.find('.wrap').append($quicksearch);
     $email_widget = $('.econstories-mailchimp-signup-widget');
     $email_widget.detach();
-    return $('header.site-header').append($email_widget);
+    $('header.site-header').append($email_widget);
+    $('#menu-filter').attr('style', 'color: red');
+    $('#menu-filter').scroll(function() {
+      console.log("Scrolled!");
+    });
   })(jQuery);
 
 }).call(this);

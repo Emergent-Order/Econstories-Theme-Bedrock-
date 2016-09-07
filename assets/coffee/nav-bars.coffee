@@ -39,7 +39,11 @@
 	$email_widget = $('.econstories-mailchimp-signup-widget')
 	$email_widget.detach()
 	$('header.site-header').append($email_widget)
-
+	$('#menu-filter').attr('style','color: red')
+	$('#menu-filter').scroll ->
+		console.log "Scrolled!"
+		return
+	return
 
 
 )(jQuery)
