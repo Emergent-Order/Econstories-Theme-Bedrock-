@@ -1,5 +1,54 @@
 jQuery(function($) {
   console.log("nav.js loaded");
+
+
+  // --------------------------------------------
+  // On mobile, show the search bar when a user
+  // scrolls up a certain amount.
+  // --------------------------------------------
+
+  var didScroll;
+  var lastScrollTop = 0;
+  var delta = 5;
+  var navbarHeight = $('header').outerHeight();
+  var $search = $('.nav-secondary .search-bar-wrap');
+
+  // On scroll, let the interval function know the user has scrolled
+  $(window).scroll(function(event){
+    didScroll = true;
+  });
+
+  // Run hasScrolled() and reset didScroll status
+  setInterval(function() {
+    if (didScroll) {
+      hasScrolled();
+      didScroll = false;
+    }
+  }, 250);
+
+  function hasScrolled() {
+
+    var st = $(this).scrollTop();
+
+    // Make sure they scroll more than delta
+    if(Math.abs(st - lastScrollTop) <= delta)
+      return;
+
+    // Make sure that user is past the "sticky" threshhold
+    if (st < lastScrollTop && st > 800) {
+      $search.removeClass('hide');
+      $search.removeClass('small');
+    }
+    else {
+      $search.addClass('hide');
+      $search.addClass('small');
+    }
+
+    lastScrollTop = st;
+
+  }
+
+
   var $navWrap = $('header.banner');
   var a = $navWrap.offset().top + 200;
 

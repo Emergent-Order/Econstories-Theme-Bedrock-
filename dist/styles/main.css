@@ -9626,6 +9626,9 @@ header.banner .wrap {
         .nav-secondary .wrap .menu-filter-container {
           width: auto;
           height: 80px; } }
+      .nav-secondary .wrap .menu-filter-container ul#menu-filter {
+        width: 600px;
+        display: block; }
       .nav-secondary .wrap .menu-filter-container li {
         display: inline-block;
         width: auto; }

@@ -36,29 +36,29 @@ jQuery(document).ready ($) ->
     return false
 
   $search = $search_bar_wrap
-  console.log $search
+  # console.log $search
 
-  if $(window).width() <= 640
-    lastScrollTop = 0
-    $(window).on "scroll", ->
-      currentScrollTop = $(this).scrollTop()
-      if currentScrollTop < lastScrollTop
-        up = true
-      else
-        up = false
-      # If scrolling up and nav is sticky, show the search
-      if up and currentScrollTop > 800
-        $search.removeClass "hide"
-        $search.removeClass "small"
-      # If clicked into search, show the search
-      else if $('nav.nav-secondary input').is(":focus")
-        $search.removeClass "hide"
-        $search.removeClass "small"
-      # Otherwise, hide it
-      else
-        $search.addClass "hide"
-        $search.addClass "small"
-      lastScrollTop = currentScrollTop
-      return
-    return
+  # if $(window).width() <= 640
+  #   lastScrollTop = 0
+  #   $(window).on "scroll", ->
+  #     currentScrollTop = $(this).scrollTop()
+  #     if currentScrollTop < lastScrollTop
+  #       up = true
+  #     else
+  #       up = false
+  #     # If scrolling up and nav is sticky, show the search
+  #     if up and currentScrollTop > 800
+  #       $search.removeClass "hide"
+  #       $search.removeClass "small"
+  #     # If clicked into search, show the search
+  #     else if $('nav.nav-secondary input').is(":focus")
+  #       $search.removeClass "hide"
+  #       $search.removeClass "small"
+  #     # Otherwise, hide it
+  #     else
+  #       $search.addClass "hide"
+  #       $search.addClass "small"
+  #     lastScrollTop = currentScrollTop
+    #   return
+    # return
   return
