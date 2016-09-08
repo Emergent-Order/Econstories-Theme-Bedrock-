@@ -24,6 +24,7 @@ var babel        = require('gulp-babel');
 var coffeelint   = require('gulp-coffeelint');
 var stylish      = require('coffeelint-stylish');
 var debug        = require('gulp-debug');
+var critical     = require('critical');
 
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./assets/manifest.json');
@@ -310,6 +311,8 @@ gulp.task('fast-css', function() {
  return gulp.src([path.source + 'styles/**/*.{scss,sass,css}'])
    .pipe(sass())
    .pipe(autoprefixer())
+   .pipe(cssNano())
+   .pipe(gulpif(enabled.rev, rev()))
    .on('error', function(err) {
      console.error(err.message);
      this.emit('end');
@@ -328,4 +331,13 @@ gulp.task('coffee', function() {
 gulp.task('autoprefix', function() {
  return gulp.src(['/dist/' + 'styles/*.css'])
    .pipe(autoprefixer())
+});
+
+
+// ### Critical Path CSS
+gulp.task('critical', ['fast-css'], function(cb) {
+  critical.generate({
+    inline: true,
+    base: 'dist/'
+  });
 });
