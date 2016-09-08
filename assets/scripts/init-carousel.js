@@ -8,7 +8,8 @@
         slidesToShow: 1,
         infinite: true,
         lazyLoad: true,
-        dots: true
+        dots: true,
+        autoplay: true
       });
     }
     return articles.each(function() {

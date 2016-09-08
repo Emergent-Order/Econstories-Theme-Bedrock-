@@ -8,7 +8,7 @@ jQuery(document).ready ($) ->
 			infinite: true
 			lazyLoad: true
 			dots: true,
-			# autoplay: true
+			autoplay: true
 
 	# $play_shape = '
 	# <svg id="svg" viewBox="0 0 191 192" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
