@@ -1,7 +1,7 @@
 <header class="banner">
   <div class="wrap">
     <!-- Brand -->
-    <a class="brand" href="<?= esc_url(home_url('/')); ?>">econ<strong>stories</strong><p class="brand-tagline">powered by emergent order</p></a>
+    <a class="brand who-made-this" href="<?= esc_url(home_url('/')); ?>">econ<strong>stories</strong><p class="brand-tagline">powered by emergent order</p></a>
 
     <!-- Navigation -->
     <nav class="nav-primary">

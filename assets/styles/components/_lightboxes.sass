@@ -1,5 +1,10 @@
 #lightbox-container
 	background: transparent
+	padding: 10px
+	top: 10px
+	vertical-align: top
+	+breakpoint($med)
+		vertical-align: middle
 	+breakpoint($large)
 		max-width: 900px
 	+breakpoint($wide)
@@ -30,10 +35,20 @@
 			left: 0
 	#lightbox-learn-more
 		color: $white
-		font-size: 1.5rem
+		font-size: 1rem
+		margin-top: 1.2rem
+		margin-bottom: 0rem
+		+breakpoint($med)
+			margin-top: 3rem
+			margin-bottom: 2rem
+			font-size: 1.5rem
+		+breakpoint($large)
+			margin-top: 6rem
+			margin-bottom: 2rem
+
 		text-align: center
-		margin-top: 6rem
-		margin-bottom: 2rem
+
+
 
 	#lightbox-extracredit-container
 		cursor: pointer
@@ -57,7 +72,11 @@
 			overflow: hidden
 			position: relative
 			width: 90%
-			font-size: 2rem
+			font-size: 1rem
+			+breakpoint($med)
+				font-size: 1.5rem
+			+breakpoint($large)
+				font-size: 2rem
 			background: $brand-primary
 			// +breakpoint($med)
 			// 	width: 50%
@@ -198,5 +217,8 @@
 			margin-top: 4rem
 
 .remodal-wrapper button.remodal-close
-	top: -40px
-	left: -40px
+	top: -25px
+	left: -25px
+	+breakpoint($med)
+		top: -40px
+		left: -40px

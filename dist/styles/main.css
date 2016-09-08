@@ -9713,7 +9713,7 @@ header.banner .wrap {
   margin-bottom: 100px; }
   @media (min-width: 900px) {
     #sticky-wrapper.is-sticky .nav-secondary {
-      margin-top: 60px; } }
+      margin-top: 54px; } }
 
 .econstories-mailchimp-signup-widget {
   background: #E6BC68;
@@ -9921,7 +9921,13 @@ main .content {
     margin-top: 300px; }
 
 #lightbox-container {
-  background: transparent; }
+  background: transparent;
+  padding: 10px;
+  top: 10px;
+  vertical-align: top; }
+  @media (min-width: 640px) {
+    #lightbox-container {
+      vertical-align: middle; } }
   @media (min-width: 900px) {
     #lightbox-container {
       max-width: 900px; } }
@@ -9993,10 +9999,19 @@ main .content {
       left: 0; }
   #lightbox-content #lightbox-learn-more {
     color: #FFFFFF;
-    font-size: 1.5rem;
-    text-align: center;
-    margin-top: 6rem;
-    margin-bottom: 2rem; }
+    font-size: 1rem;
+    margin-top: 1.2rem;
+    margin-bottom: 0rem;
+    text-align: center; }
+    @media (min-width: 640px) {
+      #lightbox-content #lightbox-learn-more {
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        font-size: 1.5rem; } }
+    @media (min-width: 900px) {
+      #lightbox-content #lightbox-learn-more {
+        margin-top: 6rem;
+        margin-bottom: 2rem; } }
   #lightbox-content #lightbox-extracredit-container {
     cursor: pointer;
     display: -webkit-box;
@@ -10027,12 +10042,18 @@ main .content {
       overflow: hidden;
       position: relative;
       width: 90%;
-      font-size: 2rem;
+      font-size: 1rem;
       background: #E6BC68;
       margin: 20px;
       border-radius: 4px;
       box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.1);
       padding: 50px; }
+      @media (min-width: 640px) {
+        #lightbox-content #lightbox-extracredit-container article {
+          font-size: 1.5rem; } }
+      @media (min-width: 900px) {
+        #lightbox-content #lightbox-extracredit-container article {
+          font-size: 2rem; } }
       #lightbox-content #lightbox-extracredit-container article .entry-title {
         color: #FFFFFF;
         cursor: pointer;
@@ -10166,8 +10187,12 @@ main .content {
       margin-top: 4rem; }
 
 .remodal-wrapper button.remodal-close {
-  top: -40px;
-  left: -40px; }
+  top: -25px;
+  left: -25px; }
+  @media (min-width: 640px) {
+    .remodal-wrapper button.remodal-close {
+      top: -40px;
+      left: -40px; } }
 
 /* === LAYOUTS === */
 section.featured {
