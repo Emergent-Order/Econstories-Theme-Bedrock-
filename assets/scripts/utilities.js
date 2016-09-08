@@ -19,6 +19,11 @@ function filterContent(filter) {
     sortData = 'type';
     sortDir = false;
   }
+  // Otherwise, sort by whether the content has an image
+  else {
+    sortData = 'image';
+    sortDir = true;
+  }
 
   // Filter & Sort!
   $content.isotope({

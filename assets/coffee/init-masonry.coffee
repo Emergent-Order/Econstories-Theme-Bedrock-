@@ -100,6 +100,8 @@ jQuery(document).ready ($) ->
 				name: '.entry-title'
 				type: '[data-type-sort]'
 				cat: '[data-category-sort]'
+				image: '[data-image-sort]'
+			sortBy: 'image'
 
 	# --------------------------------------------------
 	#  When clicked, subnav menu items should filter the

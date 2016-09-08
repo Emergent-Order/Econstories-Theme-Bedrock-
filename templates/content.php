@@ -29,6 +29,13 @@
   }
 ?>" data-type-sort="<?php
   echo get_post_type();
+?>" data-image-sort="<?php
+  if (rwmb_meta('econstories-featured-image', array(), $post->ID) || rwmb_meta( 'econstories-affiliate-featured-image', array(), $post->ID )) {
+    echo "image";
+  }
+  else {
+    echo "no-image";
+  }
 ?>">
 
   <?php

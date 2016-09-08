@@ -15,8 +15,10 @@
         getSortData: {
           name: '.entry-title',
           type: '[data-type-sort]',
-          cat: '[data-category-sort]'
-        }
+          cat: '[data-category-sort]',
+          image: '[data-image-sort]'
+        },
+        sortBy: 'image'
       });
     });
     $filter = $('ul#menu-filter');
