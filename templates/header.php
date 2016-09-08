@@ -28,7 +28,8 @@
   <?php
 
   if (is_front_page()) {
-    $query = new WP_Query( array( 'meta_key' => '_is_ns_featured_post', 'meta_value' => 'yes' ) );
+
+    $query = new WP_Query( array( 'meta_key' => '_is_ns_featured_post', 'meta_value' => 'yes', 'orderby' => array('meta_value' => 'econstories-featured-priority' ) ) );
 
     if ($query->have_posts()) {
 
@@ -52,7 +53,7 @@
 
         $url = get_url_from_oembed($oembed);
 
-        echo '<article class="featured-article">';
+        echo '<article class="featured-article" data-priority="'. rwmb_meta('econstories-featured-priority') .'">';
         echo '<a class="featured-article-link" id="' . $post_slug . '-featured-link" href="' . $url . '">';
         echo '<div class="play-button-container">';
         echo '<div class="overlay"></div>';

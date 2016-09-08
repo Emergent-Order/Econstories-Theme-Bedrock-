@@ -9588,6 +9588,8 @@ header.banner .wrap {
     max-width: 100%;
     padding-left: 20px;
     padding-right: 20px;
+    max-height: 80px;
+    overflow: hidden;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -9654,9 +9656,13 @@ header.banner .wrap {
       -webkit-box-ordinal-group: 2;
           -ms-flex-order: 1;
               order: 1;
-      margin-top: 20px;
+      top: 10px;
+      position: relative;
+      margin-bottom: 10px;
       white-space: nowrap;
-      max-height: 100%; }
+      max-height: 100%;
+      -webkit-transition: all .2s;
+              transition: all .2s; }
       @media (min-width: 640px) {
         .nav-secondary .wrap .search-bar-wrap {
           margin-top: 2px;
@@ -9679,7 +9685,11 @@ header.banner .wrap {
         color: #4a4a4a; }
     .nav-secondary .wrap .search-bar-wrap.small {
       max-height: 0px;
-      margin-top: 0px; }
+      top: -10px;
+      opacity: 0;
+      z-index: -1;
+      -webkit-transition: all .2s;
+              transition: all .2s; }
     .nav-secondary .wrap #clear-search {
       display: inline-block;
       position: relative;
@@ -9689,10 +9699,16 @@ header.banner .wrap {
       @media (min-width: 640px) {
         .nav-secondary .wrap #clear-search {
           right: 35px; } }
+  .nav-secondary .wrap.has-search {
+    max-height: 100%;
+    height: auto; }
 
 #sticky-wrapper.is-sticky .nav-secondary {
   margin-top: 54px;
   margin-bottom: 100px; }
+  @media (min-width: 640px) {
+    #sticky-wrapper.is-sticky .nav-secondary {
+      margin-top: 60px; } }
 
 .econstories-mailchimp-signup-widget {
   background: #E6BC68;

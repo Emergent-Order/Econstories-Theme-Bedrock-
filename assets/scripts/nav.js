@@ -12,6 +12,7 @@ jQuery(function($) {
   var delta = 5;
   var navbarHeight = $('header').outerHeight();
   var $search = $('.nav-secondary .search-bar-wrap');
+  var $wrap = $('.nav-secondary .wrap');
 
   // On scroll, let the interval function know the user has scrolled
   $(window).scroll(function(event){
@@ -24,7 +25,7 @@ jQuery(function($) {
       hasScrolled();
       didScroll = false;
     }
-  }, 250);
+  }, 500);
 
   function hasScrolled() {
 
@@ -36,12 +37,14 @@ jQuery(function($) {
 
     // Make sure that user is past the "sticky" threshhold
     if (st < lastScrollTop && st > 800) {
-      $search.removeClass('hide');
+      // $search.removeClass('hide');
       $search.removeClass('small');
+      $wrap.addClass('has-search');
     }
     else {
-      $search.addClass('hide');
+      // $search.addClass('hide');
       $search.addClass('small');
+      $wrap.removeClass('has-search');
     }
 
     lastScrollTop = st;

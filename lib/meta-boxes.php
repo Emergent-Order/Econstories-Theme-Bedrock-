@@ -75,6 +75,24 @@ function econstories_register_meta_boxes( $meta_boxes ) {
 								'admin_columns' => 'replace tags'
 
             ),
+
+						// Featured carousel priority
+						array(
+							'name' => 'Featured Priority',
+							'description'  => __( 'Featured Priority', 'text' ),
+							'desc'  => 'If this post is featured, what order should it appear in the carousel?',
+							'id'    => $prefix . 'featured-priority',
+							'type'  => 'range',
+
+							// Minimum value
+							'min'  => 0,
+							// Maximum value
+							'max'  => 5,
+							// Step
+							'step' => 1,
+							'admin_columns' => true
+
+						)
         )
     );
     // 2nd meta box

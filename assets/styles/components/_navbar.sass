@@ -185,6 +185,8 @@ header.banner .wrap
 		width: 100%
 		max-width: 100%
 		+padding-sides(20px)
+		max-height: 80px
+		overflow: hidden
 
 		display: flex
 		flex-direction: row
@@ -231,11 +233,14 @@ header.banner .wrap
 			display: inline-block
 			width: 100%
 			order: 1
-			margin-top: 20px
+			top: 10px
+			position: relative
+			margin-bottom: 10px
+			// margin-top: 10px
 			// margin-bottom: 10px
 			white-space: nowrap
 			max-height: 100%
-			+transition(.2s)
+			transition: all .2s
 			+breakpoint($med)
 				margin-top: 2px
 				width: 30%
@@ -254,10 +259,13 @@ header.banner .wrap
 				font-size: 16px
 				color: #4a4a4a
 
+
 		.search-bar-wrap.small
 			max-height: 0px
-			margin-top: 0px
-			+transition(.2s)
+			top: -10px
+			opacity: 0
+			z-index: -1
+			transition: all .2s
 		#clear-search
 			display: inline-block
 			position: relative
@@ -267,9 +275,15 @@ header.banner .wrap
 				right: 35px
 			color: rgba(0,0,0,.4)
 
+	.wrap.has-search
+		max-height: 100%
+		height: auto
+
 #sticky-wrapper.is-sticky
 	.nav-secondary
 		margin-top: 54px
+		+breakpoint($med)
+			margin-top: 60px
 		margin-bottom: 100px
 
 
