@@ -21,11 +21,11 @@ jQuery(function($) {
 
   // Run hasScrolled() and reset didScroll status
   setInterval(function() {
-    if (didScroll) {
+    if (didScroll && $(window).width() <= 640) {
       hasScrolled();
       didScroll = false;
     }
-  }, 500);
+  }, 250);
 
   function hasScrolled() {
 
@@ -78,13 +78,11 @@ jQuery(function($) {
   var containerWidth = $('.menu-filter-container').outerWidth();
   var threshhold = containerWidth - 100;
   var overlayVisible = true;
-  console.log(threshhold);
+
   // Detect when secondary nav has scrolled left
   $('.menu-filter-container').scroll(function() {
     var menuScrollLeft = $('.menu-filter-container').scrollLeft();
-    console.log("scroll left: " + menuScrollLeft);
     if (menuScrollLeft > threshhold && overlayVisible) {
-      console.log("Threshhold met!");
       $('.nav-filter-overlay').fadeOut(200);
       overlayVisible = false;
     }

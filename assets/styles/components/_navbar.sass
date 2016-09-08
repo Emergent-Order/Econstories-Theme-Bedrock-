@@ -210,6 +210,8 @@ header.banner .wrap
 			ul#menu-filter
 				width: 600px
 				display: block
+				+breakpoint($small)
+					width: 100%
 			li
 				display: inline-block
 				width: auto
@@ -234,18 +236,20 @@ header.banner .wrap
 			width: 100%
 			order: 1
 			top: 10px
+			height: 60px
 			position: relative
-			margin-bottom: 10px
 			// margin-top: 10px
 			// margin-bottom: 10px
 			white-space: nowrap
 			max-height: 100%
 			transition: all .2s
 			+breakpoint($med)
+				top: auto
+				height: auto
 				margin-top: 2px
 				width: 30%
 				order: 3
-				margin-right: 10px
+				margin-right: 0px
 			.quicksearch
 				width: 100%
 				display: inline-block
@@ -262,9 +266,9 @@ header.banner .wrap
 
 		.search-bar-wrap.small
 			max-height: 0px
-			top: -10px
+			top: -40px
 			opacity: 0
-			z-index: -1
+			// z-index: -1
 			transition: all .2s
 		#clear-search
 			display: inline-block
@@ -272,17 +276,17 @@ header.banner .wrap
 			padding-top: 6px
 			right: 25px
 			+breakpoint($med)
-				right: 35px
+				right: 25px
 			color: rgba(0,0,0,.4)
 
 	.wrap.has-search
 		max-height: 100%
-		height: auto
+		transition: all .2s
 
 #sticky-wrapper.is-sticky
 	.nav-secondary
 		margin-top: 54px
-		+breakpoint($med)
+		+breakpoint(900px)
 			margin-top: 60px
 		margin-bottom: 100px
 

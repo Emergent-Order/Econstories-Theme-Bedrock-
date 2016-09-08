@@ -9631,6 +9631,9 @@ header.banner .wrap {
       .nav-secondary .wrap .menu-filter-container ul#menu-filter {
         width: 600px;
         display: block; }
+        @media (min-width: 320px) {
+          .nav-secondary .wrap .menu-filter-container ul#menu-filter {
+            width: 100%; } }
       .nav-secondary .wrap .menu-filter-container li {
         display: inline-block;
         width: auto; }
@@ -9657,20 +9660,22 @@ header.banner .wrap {
           -ms-flex-order: 1;
               order: 1;
       top: 10px;
+      height: 60px;
       position: relative;
-      margin-bottom: 10px;
       white-space: nowrap;
       max-height: 100%;
       -webkit-transition: all .2s;
               transition: all .2s; }
       @media (min-width: 640px) {
         .nav-secondary .wrap .search-bar-wrap {
+          top: auto;
+          height: auto;
           margin-top: 2px;
           width: 30%;
           -webkit-box-ordinal-group: 4;
               -ms-flex-order: 3;
                   order: 3;
-          margin-right: 10px; } }
+          margin-right: 0px; } }
       .nav-secondary .wrap .search-bar-wrap .quicksearch {
         width: 100%;
         display: inline-block;
@@ -9685,9 +9690,8 @@ header.banner .wrap {
         color: #4a4a4a; }
     .nav-secondary .wrap .search-bar-wrap.small {
       max-height: 0px;
-      top: -10px;
+      top: -40px;
       opacity: 0;
-      z-index: -1;
       -webkit-transition: all .2s;
               transition: all .2s; }
     .nav-secondary .wrap #clear-search {
@@ -9698,15 +9702,16 @@ header.banner .wrap {
       color: rgba(0, 0, 0, 0.4); }
       @media (min-width: 640px) {
         .nav-secondary .wrap #clear-search {
-          right: 35px; } }
+          right: 25px; } }
   .nav-secondary .wrap.has-search {
     max-height: 100%;
-    height: auto; }
+    -webkit-transition: all .2s;
+            transition: all .2s; }
 
 #sticky-wrapper.is-sticky .nav-secondary {
   margin-top: 54px;
   margin-bottom: 100px; }
-  @media (min-width: 640px) {
+  @media (min-width: 900px) {
     #sticky-wrapper.is-sticky .nav-secondary {
       margin-top: 60px; } }
 
