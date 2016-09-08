@@ -5,7 +5,8 @@
     "coffeelint-stylish": "^0.1.2",
     "gulp-coffeelint": "^0.6.0",
     "gulp-debug": "^2.1.2",
-    "normalize.css": "^4.0.0"
+    "normalize.css": "^4.0.0",
+    "wiredep": "^2.2.2"
   },
   "scripts": {
     "start": "gulp",

@@ -46,18 +46,18 @@ function get_url_from_oembed($oembed) {
 }
 
 
-/* -----------------------
- * Localize ajax scripts through admin-ajax
- */
-
-add_action('wp_enqueue_scripts', 'ajax_enqueue_scripts');
-function ajax_enqueue_scripts() {
-	wp_enqueue_script('lightbox', get_stylesheet_directory_uri() . '/dist/scripts/lightbox.js', array('jquery'), null, true );
-
-	wp_localize_script( 'lightbox', 'lightboxy', array(
-		'ajax_url' => admin_url( 'admin-ajax.php')
-		));
-}
+// /* -----------------------
+//  * Localize ajax scripts through admin-ajax
+//  */
+//
+// add_action('wp_enqueue_scripts', 'ajax_enqueue_scripts');
+// function ajax_enqueue_scripts() {
+// 	wp_enqueue_script('lightbox', Assets\asset_path('scripts/lightbox.js'), array('jquery'), null, true );
+//
+// 	wp_localize_script( 'lightbox', 'lightboxy', array(
+// 		'ajax_url' => admin_url( 'admin-ajax.php')
+// 		));
+// }
 
 /* -----------------------
  * Build the AJAX response

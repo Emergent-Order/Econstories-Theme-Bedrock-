@@ -25,6 +25,7 @@ var coffeelint   = require('gulp-coffeelint');
 var stylish      = require('coffeelint-stylish');
 var debug        = require('gulp-debug');
 var critical     = require('critical');
+var wiredep      = require('wiredep');
 
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./assets/manifest.json');
@@ -279,7 +280,8 @@ gulp.task('watch', function() {
 // `gulp build` - Run all the build tasks but don't clean up beforehand.
 // Generally you should be running `gulp` instead of `gulp build`.
 gulp.task('build', function(callback) {
-  runSequence('fast-css',
+  runSequence('bower',
+              'fast-css',
               'scripts',
               ['fonts', 'images'],
               callback);
@@ -297,6 +299,37 @@ gulp.task('wiredep', function() {
     }))
     .pipe(gulp.dest(path.source + 'styles'));
 });
+
+
+
+
+gulp.task('bower', ['concatBowerCSS']);
+
+gulp.task('concatBowerCSS', function() {
+  var css = gulp.src(wiredep().css);
+
+  return css
+    .pipe(concat('bower.css'))
+    .pipe(autoprefixer())
+    .pipe(cssNano())
+    .pipe(gulpif(enabled.rev, rev()))
+    .pipe(gulp.dest('./dist/styles'))
+    .pipe(writeToManifest('styles'));
+});
+
+gulp.task('concatBowerJS', function() {
+  var js = gulp.src(wiredep().js);
+
+  return js
+    .pipe(concat('bower.js'))
+    .pipe(uglify())
+    .pipe(gulpif(enabled.rev, rev()))
+    .pipe(gulp.dest('./dist/scripts'));
+});
+
+
+
+
 
 // ### Gulp
 // `gulp` - Run a complete build. To compile for production run `gulp --production`.
