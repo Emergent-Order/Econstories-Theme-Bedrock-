@@ -7,13 +7,36 @@ var $ = jQuery.noConflict();
 function filterContent(filter) {
   var $filteredByTag;
   var $content = jQuery('.content');
+  var sortData, sortDir;
+
+  // If Love Gov, put the episodes in order by name
+  if (filter == ".category-love-gov") {
+    sortData = 'name';
+    sortDir = true;
+  }
+  // If Econpop, make sure episodes load before extra credit
+  else if (filter == ".category-econpop") {
+    sortData = 'type';
+    sortDir = false;
+  }
+
+  // Filter & Sort!
   $content.isotope({
     itemSelector: 'article',
     layoutMode: 'masonry',
-    filter: filter
+    filter: filter,
+    sortBy: sortData,
+    sortAscending: sortDir
   });
+
   console.log(filter);
+  console.log(sortData);
+  console.log(sortDir);
+
+  // Scroll us back to the top
   scrollBackUp();
+
+  // Add formatting to the filter we just clicked on
   $filteredByTag = jQuery('nav.nav-secondary a[href*="' + filter.replace('.category-', '') + '"]');
   if (filter !== void 0) {
     addSelectedFormatting($filteredByTag);

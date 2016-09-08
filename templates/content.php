@@ -22,7 +22,14 @@
   }
  ?>
 
-<article <?php post_class($classes); ?>>
+<article <?php post_class($classes); ?> data-category-sort="<?php
+  $cats = get_the_category();
+  foreach ($cats as $c) {
+    echo $c->slug;
+  }
+?>" data-type-sort="<?php
+  echo get_post_type();
+?>">
 
   <?php
 

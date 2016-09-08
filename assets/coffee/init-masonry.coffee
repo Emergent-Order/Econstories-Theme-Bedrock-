@@ -96,6 +96,10 @@ jQuery(document).ready ($) ->
 			masonry:
 				columnWidth: 'article'
 				gutterWidth: '.gutter-sizer'
+			getSortData:
+				name: '.entry-title'
+				type: '[data-type-sort]'
+				cat: '[data-category-sort]'
 
 	# --------------------------------------------------
 	#  When clicked, subnav menu items should filter the
